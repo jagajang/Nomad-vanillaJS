@@ -5,7 +5,4 @@ for(i = 1; i <= 11; i++)
 
 const imageNum = Math.floor(Math.random() * images.length)
 
-const newImage = document.createElement("img")
-newImage.src = `backgroundImages/${images[imageNum]}`
-
-document.body.append(newImage)
+document.body.background = `backgroundImages/${images[imageNum]}`

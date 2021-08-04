@@ -15,9 +15,6 @@ function onGeoSuccess(position) {
         cityInfo.innerText = data.name
         weatInfo.innerText = data.weather[0].main
     })
-
-
-    cityInfo.innerText = data
 }
 
 function onGeoFail(position) {
