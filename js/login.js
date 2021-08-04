@@ -20,8 +20,6 @@ function greetString(username) {
     loginGreet.innerText = `Hi ${username}!`
 }
 
-console.log(localStorage)
-
 const savedUsername = localStorage.getItem("username")
 
 if(savedUsername === null) {
