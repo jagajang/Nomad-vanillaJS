@@ -1,21 +1,22 @@
 class thingTodo {
-    constructor(newTodo) {
-        this.id = `todo-${newTodo}`
-        this.todo = newTodo
+    constructor(text, id) {
+        this.text = text
+        this.id = id
     }
 }
 
 const todoForm = document.querySelector("#todo-form")
 const todoList = document.querySelector("#todo-list")
-const todoLS = []
+let todoLS = []
 
 function handleTodoSubmit(event) {
     event.preventDefault()
 
     const todoInput = todoForm.querySelector("input")
     const newTodo = todoInput.value
+    const todoID = Date.now().toString()
 
-    addLi(newTodo)
+    addLi(new thingTodo(newTodo, todoID))
     saveTodo()
 
     todoInput.value = ""
@@ -29,21 +30,36 @@ function addLi(newTodo) {
     newLi.append(newSpan)
     newLi.append(newButton)
 
-    newSpan.innerText = newTodo
-    newSpan.id = `todo-${newTodo}`
-
+    newLi.id = newTodo.id
+    newSpan.innerText = newTodo.text
     newButton.innerText = "Delete"
     newButton.addEventListener("click", deleteLi)
 
     todoList.append(newLi)
-    todoLS.push(new thingTodo(newTodo))
+    todoLS.push(newTodo)
 }
 
 function deleteLi(event) {
     const clickedLi = event.srcElement.parentElement
-    //const clickedLi = event.path[1]
+
+    delID = clickedLi.id
+
+    console.log(delID)
+    console.log(todoLS)
 
     clickedLi.remove()
+
+    todoLS = todoLS.filter(element => deleteFilter(element, delID))
+    saveTodo()
+}
+
+function deleteFilter(todo, delID) {
+    console.log(todo.id, delID)
+    if(todo.id === delID) {
+        return false
+    }
+
+    return true
 }
 
 function saveTodo() {
@@ -55,7 +71,7 @@ function loadTodo() {
 
     if(stringTodo != null) {
         const storageList = JSON.parse(stringTodo)
-        storageList.forEach(element => addLi(element.todo));
+        storageList.forEach(addLi);
     }
 }
 
