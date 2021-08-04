@@ -14,7 +14,7 @@ function handleTodoSubmit(event) {
 
     const todoInput = todoForm.querySelector("input")
     const newTodo = todoInput.value
-    const todoID = Date.now().toString()
+    const todoID = "todo-" + Date.now().toString()
 
     addLi(new thingTodo(newTodo, todoID))
     saveTodo()
@@ -41,24 +41,16 @@ function addLi(newTodo) {
 
 function deleteLi(event) {
     const clickedLi = event.srcElement.parentElement
-
     delID = clickedLi.id
 
-    console.log(delID)
-    console.log(todoLS)
-
     clickedLi.remove()
-
     todoLS = todoLS.filter(element => deleteFilter(element, delID))
     saveTodo()
 }
 
 function deleteFilter(todo, delID) {
-    console.log(todo.id, delID)
-    if(todo.id === delID) {
+    if(todo.id === delID)
         return false
-    }
-
     return true
 }
 
