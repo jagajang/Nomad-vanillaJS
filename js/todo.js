@@ -1,5 +1,6 @@
 const todoForm = document.querySelector("#todo-form")
 const todoList = document.querySelector("#todo-list")
+const todoLS = []
 
 function handleTodoSubmit(event) {
     event.preventDefault()
@@ -30,19 +31,25 @@ function addLi(newTodo) {
 }
 
 function deleteLi(event) {
-    console.log(event)
-
     const clickedButton = event.srcElement
     const clickedLi = clickedButton.parentElement
-    //const clickedLi = event.path[1]
 
     clickedLi.remove()
 }
-
-const todoLS = []
 
 function saveTodo() {
     localStorage.setItem("todo", JSON.stringify(todoLS))
 }
 
+function loadTodo() {
+    const stringTodo = localStorage.getItem("todo")
+
+    if(stringTodo != null) {
+        const storageList = JSON.parse(stringTodo)
+        for(i = 0; i < storageList.length; i++)
+            addLi(storageList[i])
+    }
+}
+
+loadTodo()
 todoForm.addEventListener("submit", handleTodoSubmit)
