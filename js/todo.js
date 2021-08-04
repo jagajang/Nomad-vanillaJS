@@ -9,6 +9,7 @@ const todoForm = document.querySelector("#todo-form")
 const todoList = document.querySelector("#todo-list")
 let todoLS = []
 
+
 function handleTodoSubmit(event) {
     event.preventDefault()
 
@@ -26,13 +27,14 @@ function addLi(newTodo) {
     const newLi = document.createElement("li")
     const newSpan = document.createElement("span")
     const newButton = document.createElement("button")
-
-    newLi.append(newSpan)
+    
     newLi.append(newButton)
-
+    newLi.append(newSpan)
+    
     newLi.id = newTodo.id
     newSpan.innerText = newTodo.text
-    newButton.innerText = "Delete"
+    newButton.innerText = "X"
+    newButton.style.marginRight = "10px"
     newButton.addEventListener("click", deleteLi)
 
     todoList.append(newLi)
@@ -40,7 +42,10 @@ function addLi(newTodo) {
 }
 
 function deleteLi(event) {
-    const clickedLi = event.srcElement.parentElement
+    const clickedButton = event.srcElement
+    console.dir(clickedButton)
+
+    const clickedLi = clickedButton.parentElement
     delID = clickedLi.id
 
     clickedLi.remove()
