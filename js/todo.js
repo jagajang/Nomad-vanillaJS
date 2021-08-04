@@ -1,3 +1,10 @@
+class thingTodo {
+    constructor(newTodo) {
+        this.id = `todo-${newTodo}`
+        this.todo = newTodo
+    }
+}
+
 const todoForm = document.querySelector("#todo-form")
 const todoList = document.querySelector("#todo-list")
 const todoLS = []
@@ -23,16 +30,18 @@ function addLi(newTodo) {
     newLi.append(newButton)
 
     newSpan.innerText = newTodo
+    newSpan.id = `todo-${newTodo}`
+
     newButton.innerText = "Delete"
     newButton.addEventListener("click", deleteLi)
 
     todoList.append(newLi)
-    todoLS.push(newTodo)
+    todoLS.push(new thingTodo(newTodo))
 }
 
 function deleteLi(event) {
-    const clickedButton = event.srcElement
-    const clickedLi = clickedButton.parentElement
+    const clickedLi = event.srcElement.parentElement
+    //const clickedLi = event.path[1]
 
     clickedLi.remove()
 }
@@ -46,8 +55,7 @@ function loadTodo() {
 
     if(stringTodo != null) {
         const storageList = JSON.parse(stringTodo)
-        for(i = 0; i < storageList.length; i++)
-            addLi(storageList[i])
+        storageList.forEach(element => addLi(element.todo));
     }
 }
 
