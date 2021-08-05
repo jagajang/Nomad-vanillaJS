@@ -58,6 +58,7 @@ body {
     position: relative;
     left: 45%;
     width: 10%;
+    max-height: 50%;
     padding-left: 10px;
     background-color: beige;
     opacity: 60%;
@@ -84,7 +85,8 @@ body {
 }
 
 #quote {
-    position: relative;
+    position: fixed;
+    top: 90%;
     left: 40%;
     width: 20%;
     background-color: black;
