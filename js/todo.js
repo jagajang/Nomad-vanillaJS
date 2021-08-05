@@ -26,9 +26,7 @@ function handleTodoSubmit(event) {
     else {
         messageText.innerText = "you cannot add more thing to do!"
         message.classList.remove("hidden")
-        setTimeout(function() {
-            message.classList.add("hidden")
-        }, 3000)
+        setTimeout(function() {message.classList.add("hidden")}, 3000)
     }
 
     todoInput.value = ""

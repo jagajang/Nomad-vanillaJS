@@ -32,7 +32,8 @@ body {
 #clock {
     padding-top: 20rem;
     margin-bottom: 0;
-    color: darkorange;
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
     font-size: 95px;
     font-family: Impact;
     text-align: center;
