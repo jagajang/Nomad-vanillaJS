@@ -13,8 +13,7 @@ const quotes = [
     new quote("Do not try to be original, just try to be good.", "Paul Rand"),
     new quote("Do not be afraid to give up the good to go for the great.", "Jogn D. Rockefeller"),
     new quote("It is better to fail in originality\nthan to succeed in imitation.", "Herman Melville"),
-    new quote("Success if walking from failure to failure\nwith no loss of enthusiasm.", "Winston Churchill"),
-    new quote("응애 맘마조", "ㅇㅇ")
+    new quote("Success if walking from failure to failure\nwith no loss of enthusiasm.", "Winston Churchill")
 ]
 
 const quoteNum = Math.floor(Math.random() * quotes.length)
