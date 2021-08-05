@@ -12,6 +12,8 @@
 }
 
 html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
 }
@@ -27,7 +29,7 @@ body {
 
 #clock {
     padding-top: 20%;
-
+    top: 20%;
     color: darkorange;
     font-size: 95px;
     font-family: Impact;
