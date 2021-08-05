@@ -10,7 +10,7 @@ const quoteAuthor = document.querySelector("#quote-author")
 
 const quotes = []
 for(i = 0; i < 10; i++)
-    quotes.push(new quote(`명언${i}`, `사람${i}`))
+    quotes.push(new quote(`명언${i}`, `- 사람${i}`))
 
 const quoteNum = Math.floor(Math.random() * quotes.length)
 

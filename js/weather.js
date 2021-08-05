@@ -18,9 +18,7 @@ function onGeoSuccess(position) {
 }
 
 function onGeoFail(position) {
-    console.log(position)
-
-    alert("WHY!!!!!!!")
+    console.log("denied...")
 }
 
 navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoFail)

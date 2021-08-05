@@ -34,7 +34,6 @@ function addLi(newTodo) {
     newLi.id = newTodo.id
     newSpan.innerText = newTodo.text
     newButton.innerText = "X"
-    newButton.style.marginRight = "10px"
     newButton.addEventListener("click", deleteLi)
 
     todoList.append(newLi)
