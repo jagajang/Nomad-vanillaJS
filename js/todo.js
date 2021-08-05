@@ -17,10 +17,14 @@ function handleTodoSubmit(event) {
     const newTodo = todoInput.value
     const todoID = "todo-" + Date.now().toString()
 
-    addLi(new thingTodo(newTodo, todoID))
-    saveTodo()
-
-    todoInput.value = ""
+    if(todoLS.length < 7) {
+        addLi(new thingTodo(newTodo, todoID))
+        saveTodo()
+        todoInput.value = ""
+    }
+    else {
+        todoInput.value = "maximum to do 7"
+    }
 }
 
 function addLi(newTodo) {

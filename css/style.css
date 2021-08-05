@@ -86,16 +86,25 @@ body {
 
 #quote {
     position: fixed;
-    top: 90%;
-    left: 40%;
-    width: 20%;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 30%;
+    height: 10%;
+    padding-top: 25px;
     background-color: black;
-    font-family:'Franklin Gothic Medium';
     color: white;
     opacity: 65%;
 }
 
-#quote #quote-author {
+#quote-sentence {
+    height: 50%;
+    margin: 0;
+    font-family:'Franklin Gothic Medium';
+}
+
+#quote-author {
+    margin: 0;
     font-family: Arial;
 }
 
