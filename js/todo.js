@@ -9,6 +9,8 @@ const todoForm = document.querySelector("#todo-form")
 const todoList = document.querySelector("#todo-list")
 let todoLS = []
 
+const message = document.querySelector("#message")
+const messageText = message.querySelector("p")
 
 function handleTodoSubmit(event) {
     event.preventDefault()
@@ -20,11 +22,16 @@ function handleTodoSubmit(event) {
     if(todoLS.length < 7) {
         addLi(new thingTodo(newTodo, todoID))
         saveTodo()
-        todoInput.value = ""
     }
     else {
-        todoInput.value = "maximum to do 7"
+        messageText.innerText = "you cannot add more thing to do!"
+        message.classList.remove("hidden")
+        setTimeout(function() {
+            message.classList.add("hidden")
+        }, 3000)
     }
+
+    todoInput.value = ""
 }
 
 function addLi(newTodo) {
