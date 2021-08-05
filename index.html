@@ -8,7 +8,7 @@
     <title>Momentum</title>
 </head>
 <body>
-    <h2 id="clock"></h2>
+    <h2 id="clock" class="unselectable"></h2>
     
     <form id="login-form" class="hidden">
         <input
@@ -20,7 +20,7 @@
         <button>Log In</button>
     </form>
 
-    <h1 id="greeting" class="hidden"></h1>
+    <h1 id="greeting" class="hidden unselectable"></h1>
 
     <form id="todo-form">
         <input
@@ -31,17 +31,17 @@
 
     <ul id="todo-list"></ul>
 
-    <div id="quote">
+    <div id="quote" class="unselectable">
         <p id="quote-sentence"></p>
         <p id="quote-author"></p>
     </div>
 
-    <div id="weather" class="hidden">
+    <div id="weather" class="hidden unselectable">
         <p id="city-info"></p>
         <p id="weat-info"></p>
     </div>
 
-    <div id="message" class="hidden">
+    <div id="message" class="hidden unselectable">
         <p>message</p>
     </div>
 

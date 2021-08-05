@@ -42,6 +42,7 @@ function addLi(newTodo) {
     
     newLi.id = newTodo.id
     newSpan.innerText = newTodo.text
+    newSpan.classList.add("unselectable")
     newButton.innerText = "X"
     newButton.addEventListener("click", deleteLi)
 
