@@ -13,6 +13,7 @@
 
 html, body {
     margin: 0;
+    border: 0;
     padding: 0;
     height: 100%;
     width: 100%;
@@ -28,6 +29,7 @@ body {
 }
 
 #clock {
+    margin-bottom: 0;
     padding-top: 20%;
     top: 20%;
     color: darkorange;
@@ -39,10 +41,17 @@ body {
 #greeting {
     color: sandybrown;
     font-size: 40px;
+    font-family: monospace;
 }
 
 #todo-form input{
     width: 350px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: monospace;
+}
+
+#todo-form input::placeholder {
+    color: black;
 }
 
 #todo-list {
@@ -76,12 +85,13 @@ body {
     left: 40%;
     width: 20%;
     background-color: black;
+    font-family:'Franklin Gothic Medium';
     color: white;
     opacity: 65%;
 }
 
 #quote #quote-author {
-    align-self: right;
+    font-family: Arial;
 }
 
 #weather {
